@@ -159,9 +159,59 @@ proc_senten
 funcion
  : LLAVEIZ sec_proposiciones PCOMA LLAVEDE
  ;
+//gramaticas para clases
+clase_sentencia
+ : acceso (FINAL | ESTATICO)?  CLASE CLASEID (EXTIENDE CLASEID)? (IMPLEMENTA CLASEID)? bloque_clase
+ ;
+acceso //CONTROL DE ACCESO METODOS
+ : PUBLICO | PRIVADO | PROTEGIDO
+ ;
+bloque_clase
+ : LLAVEIZ clase_body LLAVEDE
+ | LLAVEIZ LLAVEDE
+ ;
+clase_body
+ : proposicion
+ | objeto
+ | metodo
+ | asignacion_obj
+ | constructor
+ | llamada_metodo
+ ;
+objeto
+  : CLASE OBJETOID ASIGNAR NUEVO CLASEID lista_parsv PCOMA //creacion objeto
+  ;
+metodo //creacion metodos
+ : acceso? modificador? tipo IDENTIFICADOR lista_parsv bloque
+;
+asignacion_obj
+ : OBJETOID PUNTO variable ASIGNAR IDENTIFICADOR PCOMA
+ ;
+constructor
+ : modificador CLASEID lista_parsv bloque_constructor PCOMA
+ ;
+llamada_metodo
+ : OBJETOID PUNTO IDENTIFICADOR lista_parsv PCOMA //lamada objeto
+ | SUPERCLASE PUNTO IDENTIFICADOR lista_parsv PCOMA
+ ;
+ //modificadores metodos
+modificador
+ : ESTATICO | FINAL | ABSTRACTO
+ ;
+bloque_constructor
+ : LLAVEIZ LLAVEDE
+ | LLAVEIZ asignacion_esto LLAVEDE
+ | LLAVEIZ superclase LLAVEDE
+ ;
+asignacion_esto //asignar this en constructor
+ : (ESTO PUNTO IDENTIFICADOR ASIGNAR IDENTIFICADOR PCOMA)*
+ ;
+superclase
+ : SUPERCLASE lista_parsv PCOMA
+ ;
 
 
-//Expresiones regulares para objetos
+//Expresiones regulares para tokens de objetos
 PUBLICO : 'publico';
 PRIVADO : 'privado';
 PROTEGIDO : 'protegido';
@@ -227,10 +277,10 @@ ROMPER: 'romper';
 HACER: 'hacer';
 PARA : 'para';
 DEFECTO : 'defecto';
-//Expresiones regulares para objetos
+//Expresiones regulares para tokens de objetos
 OBJETOID : [a-z] [a-zA-Z_0-9]*;
 CLASEID : [A-Z] [a-zA-Z_0-9]*;
-//Expresiones regulares para objetos
+//Expresiones regulares para tokens de objetos
 IDENTIFICADOR : [a-zA-Z_] [a-zA-Z_0-9]*;
 ENTERO : [0-9]+;
 REAL : [0-9]* '.' [0-9]* ([eE] [+-]? [0-9]+)?;
