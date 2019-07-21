@@ -57,6 +57,16 @@ public interface DiunisioListener extends ParseTreeListener {
 	 */
 	void exitClase_body(DiunisioParser.Clase_bodyContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link DiunisioParser#def_clase}.
+	 * @param ctx the parse tree
+	 */
+	void enterDef_clase(DiunisioParser.Def_claseContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link DiunisioParser#def_clase}.
+	 * @param ctx the parse tree
+	 */
+	void exitDef_clase(DiunisioParser.Def_claseContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link DiunisioParser#llamada_metodo}.
 	 * @param ctx the parse tree
 	 */
@@ -266,6 +276,36 @@ public interface DiunisioListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitBloque(DiunisioParser.BloqueContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link DiunisioParser#bloque_metodo}.
+	 * @param ctx the parse tree
+	 */
+	void enterBloque_metodo(DiunisioParser.Bloque_metodoContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link DiunisioParser#bloque_metodo}.
+	 * @param ctx the parse tree
+	 */
+	void exitBloque_metodo(DiunisioParser.Bloque_metodoContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link DiunisioParser#sec_pobjeto}.
+	 * @param ctx the parse tree
+	 */
+	void enterSec_pobjeto(DiunisioParser.Sec_pobjetoContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link DiunisioParser#sec_pobjeto}.
+	 * @param ctx the parse tree
+	 */
+	void exitSec_pobjeto(DiunisioParser.Sec_pobjetoContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link DiunisioParser#proposicion_obj}.
+	 * @param ctx the parse tree
+	 */
+	void enterProposicion_obj(DiunisioParser.Proposicion_objContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link DiunisioParser#proposicion_obj}.
+	 * @param ctx the parse tree
+	 */
+	void exitProposicion_obj(DiunisioParser.Proposicion_objContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link DiunisioParser#sec_proposiciones}.
 	 * @param ctx the parse tree

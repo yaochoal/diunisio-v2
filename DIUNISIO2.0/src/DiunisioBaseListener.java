@@ -75,6 +75,18 @@ public class DiunisioBaseListener implements DiunisioListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterDef_clase(DiunisioParser.Def_claseContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitDef_clase(DiunisioParser.Def_claseContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterLlamada_metodo(DiunisioParser.Llamada_metodoContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -322,6 +334,42 @@ public class DiunisioBaseListener implements DiunisioListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitBloque(DiunisioParser.BloqueContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterBloque_metodo(DiunisioParser.Bloque_metodoContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitBloque_metodo(DiunisioParser.Bloque_metodoContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterSec_pobjeto(DiunisioParser.Sec_pobjetoContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitSec_pobjeto(DiunisioParser.Sec_pobjetoContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterProposicion_obj(DiunisioParser.Proposicion_objContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitProposicion_obj(DiunisioParser.Proposicion_objContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

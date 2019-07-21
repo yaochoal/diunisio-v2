@@ -40,6 +40,12 @@ public interface DiunisioVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitClase_body(DiunisioParser.Clase_bodyContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link DiunisioParser#def_clase}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitDef_clase(DiunisioParser.Def_claseContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link DiunisioParser#llamada_metodo}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -165,6 +171,24 @@ public interface DiunisioVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitBloque(DiunisioParser.BloqueContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link DiunisioParser#bloque_metodo}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitBloque_metodo(DiunisioParser.Bloque_metodoContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link DiunisioParser#sec_pobjeto}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitSec_pobjeto(DiunisioParser.Sec_pobjetoContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link DiunisioParser#proposicion_obj}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitProposicion_obj(DiunisioParser.Proposicion_objContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link DiunisioParser#sec_proposiciones}.
 	 * @param ctx the parse tree

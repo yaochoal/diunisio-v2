@@ -1,9 +1,6 @@
 //Nombre del lenguaje: Diunisio
 grammar Diunisio;
 
-
-
-
 //Símbolo inicial
 algoritmo
  : diunisio10 | diunisio20
@@ -58,7 +55,7 @@ objeto
   : CLASEID IDENTIFICADOR ASIGNAR NUEVO CLASEID lista_parsv PCOMA //creacion objeto
   ;
 metodo //creacion metodos
- : acceso? modificador? tipo IDENTIFICADOR lista_parsv bloque
+ : acceso? modificador? tipo IDENTIFICADOR lista_parsv bloque_metodo
  ;
  //modificadores metodos
 modificador
@@ -147,6 +144,29 @@ bloque
  : LLAVEIZ LLAVEDE
  | LLAVEIZ sec_proposiciones LLAVEDE
  ;
+
+bloque_metodo
+ : LLAVEIZ LLAVEDE
+ | LLAVEIZ sec_pobjeto LLAVEDE
+ ;
+
+sec_pobjeto
+ : (proposicion_obj)* proposicion_obj
+ ;
+
+ proposicion_obj
+  : RETORNAR expresion PCOMA
+  | objeto
+  | si_senten
+  | asignacion_obj
+  | llamada_metodo
+  | mientras_senten
+  | para_senten
+  | hacer_mientras_senten
+  | asignacion PCOMA
+  | LLAVEIZ proposicion_obj LLAVEDE
+  | OTRO {System.err.println("Caracter desconocido: " + $OTRO.text);}
+  ;
 
 //Secuenciación
 sec_proposiciones
