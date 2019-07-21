@@ -2,7 +2,7 @@
 
 ## Propósito
 
-realizar los re-diseños y adaptaciones necesarias para convertir el lenguaje imperativo  DiUNisio 1.0 en un lenguaje Orientado por Objetos DiUNisio 2.0.  
+Realizar los re-diseños y adaptaciones necesarias para convertir el lenguaje imperativo  DiUNisio 1.0 en un lenguaje Orientado por Objetos DiUNisio 2.0.  
 
 ## Integrantes
 
