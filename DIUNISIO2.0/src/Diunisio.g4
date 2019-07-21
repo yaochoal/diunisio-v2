@@ -28,16 +28,13 @@ clase_body
  | constructor
  | llamada_metodo
  ;
-
 def_clase
  : tipo (IDENTIFICADOR)?  PCOMA
  ;
-
 llamada_metodo
  : IDENTIFICADOR PUNTO IDENTIFICADOR lista_parsv PCOMA
  | SUPERCLASE PUNTO IDENTIFICADOR lista_parsv PCOMA
  ;
-
 constructor
   : acceso CLASEID lista_parsv LLAVEIZ bloque_constructor* LLAVEDE
   ;
