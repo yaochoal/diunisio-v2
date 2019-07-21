@@ -21,12 +21,18 @@ bloque_clase
  ;
 clase_body
  : proposicion
+ | def_clase
  | objeto
  | metodo
  | asignacion_obj
  | constructor
  | llamada_metodo
  ;
+
+def_clase
+ : tipo (IDENTIFICADOR)?  PCOMA
+ ;
+
 llamada_metodo
  : IDENTIFICADOR PUNTO IDENTIFICADOR lista_parsv PCOMA
  | SUPERCLASE PUNTO IDENTIFICADOR lista_parsv PCOMA
@@ -46,10 +52,12 @@ superclase
 asignacion_esto //asignar this en constructor
   : (ESTO PUNTO IDENTIFICADOR ASIGNAR expresion PCOMA)
   ;
- asignacion_obj
+
+asignacion_obj
   : IDENTIFICADOR PUNTO variable ASIGNAR expresion PCOMA
   ;
- objeto
+
+objeto
   : CLASEID IDENTIFICADOR ASIGNAR NUEVO CLASEID lista_parsv PCOMA //creacion objeto
   ;
 metodo //creacion metodos
