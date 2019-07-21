@@ -2,29 +2,72 @@
 grammar Diunisio;
 
 
-clase_sentencia
+
+
+//Símbolo inicial
+algoritmo
+ : diunisio10 | diunisio20
+ ;
+diunisio20
+ : declaracionClase
+ ;
+
+declaracionClase
  : acceso (FINAL | ESTATICO)?  CLASE CLASEID (EXTIENDE CLASEID)? (IMPLEMENTA CLASEID)? bloque_clase
  ;
-acceso
- : PUBLICO | PRIVADO | PROTEGIDO
- ;
 bloque_clase
- : LLAVEIZ clase_body LLAVEDE
+ : LLAVEIZ clase_body* LLAVEDE
  | LLAVEIZ LLAVEDE
  ;
 clase_body
- : metodo
- //| objeto
- //| metodo
- //| asignacion_obj
- //| constructor
- //| llamada_metodo
+ : proposicion
+ | objeto
+ | metodo
+ | asignacion_obj
+ | constructor
+ | llamada_metodo
  ;
-//Símbolo inicial
-metodo
- :  IDENTIFICADOR (PAREN_AP lista_ids PAREN_CI)? DOSPUNTOS bloque
+llamada_metodo
+ : IDENTIFICADOR PUNTO IDENTIFICADOR lista_parsv PCOMA
+ | SUPERCLASE PUNTO IDENTIFICADOR lista_parsv PCOMA
  ;
 
+constructor
+  : acceso CLASEID lista_parsv LLAVEIZ bloque_constructor* LLAVEDE
+  ;
+  bloque_constructor
+  :
+    asignacion_esto
+  |  superclase
+  ;
+superclase
+  : SUPERCLASE lista_parsv PCOMA
+  ;
+asignacion_esto //asignar this en constructor
+  : (ESTO PUNTO IDENTIFICADOR ASIGNAR expresion PCOMA)
+  ;
+ asignacion_obj
+  : IDENTIFICADOR PUNTO variable ASIGNAR expresion PCOMA
+  ;
+ objeto
+  : CLASEID IDENTIFICADOR ASIGNAR NUEVO CLASEID lista_parsv PCOMA //creacion objeto
+  ;
+metodo //creacion metodos
+ : acceso? modificador? tipo IDENTIFICADOR lista_parsv bloque
+ ;
+ //modificadores metodos
+modificador
+ : ESTATICO | FINAL | ABSTRACTO
+ ;
+
+acceso //CONTROL DE ACCESO METODOS
+ : PUBLICO | PRIVADO | PROTEGIDO
+ ;
+
+
+diunisio10
+ : ALGORITMO IDENTIFICADOR (PAREN_AP lista_ids PAREN_CI)? DOSPUNTOS bloque TERMINA
+ ;
 //Lista de identificadores
 lista_ids
  : IDENTIFICADOR (COMA IDENTIFICADOR)*
@@ -92,7 +135,7 @@ conjunto
 
 //Identificador de tipo de retorno
 tipo
- : INT | FLOAT | STRING | BOOL | MATRIZ | VECTOR;
+ : INT | FLOAT | STRING | BOOL | MATRIZ | VECTOR | VOID | CLASEID;
 
 //Bloque
 bloque
@@ -179,8 +222,26 @@ funcion
  : LLAVEIZ sec_proposiciones PCOMA LLAVEDE
  ;
 
+
+PUBLICO : 'publico';//nuewo token
+PRIVADO : 'privado';//nuewo token
+PROTEGIDO : 'protegido';//nuewo token
+ESTATICO : 'estatico';//nuewo token
+FINAL : 'final';//nuewo token
+ABSTRACTO : 'abstracto';//nuewo token
+NUEVO : 'nuevo';//nuewo token
+PUNTO : '.';//nuewo token
+ESTO : 'esto';//nuewo token
+IMPLEMENTA : 'implementa'; //nuewo token
+EXTIENDE : 'extiende'; //nuewo token
+SUPERCLASE : 'super'; //nuewo token
+INTERFAZ: 'interfaz'; //nuevo token
+CLASE: 'clase'; //nuevo token
+VOID: 'void'; //nuevo token
 //Expresiones regulares para tokens
 COMENTARIO : ('#' ~[\r\n]*  | '/*' .*? '*/') -> skip;
+ALGORITMO : 'ALGORITMO';
+TERMINA : '..';
 ENTONCES : 'entonces';
 O : '||';
 Y : '&&';
@@ -205,14 +266,6 @@ STRING : 'cadena';
 BOOL : 'booleano';
 MATRIZ : 'matriz';
 VECTOR : 'vector';
-PUBLICO : 'publico';//nuevo token
-PRIVADO : 'privado';//nuevo token
-PROTEGIDO : 'protegido';//nuevo token
-ESTATICO : 'estatico';//nuevo token
-FINAL : 'final';//nuevo token
-ABSTRACTO : 'abstracto';//nuevo token
-NUEVO : 'nuevo';//nuevo token
-
 PCOMA : ';';
 ASIGNAR : '=';
 PAREN_AP : '(';
@@ -235,17 +288,9 @@ ROMPER: 'romper';
 HACER: 'hacer';
 PARA : 'para';
 DEFECTO : 'defecto';
-PUNTO : '.';//nuevo token
-ESTO : 'esto';//nuevo token
-IMPLEMENTA : 'implementa'; //nuevo token
-EXTIENDE : 'extiende';//nuevo token
-SUPERCLASE : 'superclase';//nuevo token
-INTERFAZ: 'interfaz'; //nuevo token
-CLASE: 'clase'; //nuevo token
-CLASEID : [A-Z] [a-zA-Z_0-9]*; //nuevo token
+
+CLASEID : [A-Z] [a-zA-Z_0-9]*;//nuewo token
 IDENTIFICADOR : [a-zA-Z_] [a-zA-Z_0-9]*;
-
-
 ENTERO : [0-9]+;
 REAL : [0-9]* '.' [0-9]* ([eE] [+-]? [0-9]+)?;
 COMPLEJO : (ENTERO|REAL) [+|-] (ENTERO|REAL)? 'i';

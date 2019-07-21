@@ -21,7 +21,7 @@ public class EvalVisitor extends DiunisioBaseVisitor<Valor> {
 
     //Visitor de las producciones de Algoritmo
     @Override
-    public Valor visitMetodo(DiunisioParser.MetodoContext ctx) {
+    public Valor visitDiunisio10(DiunisioParser.Diunisio10Context ctx) {
         Main.algoritmo = ctx.IDENTIFICADOR().getText();
         //Recibe los parámetros obtenidos de la clase Main y los inicializa
         if(ctx.lista_ids().getChildCount() > 0 && Main.parametros != null){

@@ -15,25 +15,37 @@ public class DiunisioBaseListener implements DiunisioListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterClase_sentencia(DiunisioParser.Clase_sentenciaContext ctx) { }
+	@Override public void enterAlgoritmo(DiunisioParser.AlgoritmoContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitClase_sentencia(DiunisioParser.Clase_sentenciaContext ctx) { }
+	@Override public void exitAlgoritmo(DiunisioParser.AlgoritmoContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterAcceso(DiunisioParser.AccesoContext ctx) { }
+	@Override public void enterDiunisio20(DiunisioParser.Diunisio20Context ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitAcceso(DiunisioParser.AccesoContext ctx) { }
+	@Override public void exitDiunisio20(DiunisioParser.Diunisio20Context ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterDeclaracionClase(DiunisioParser.DeclaracionClaseContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitDeclaracionClase(DiunisioParser.DeclaracionClaseContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -63,6 +75,90 @@ public class DiunisioBaseListener implements DiunisioListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterLlamada_metodo(DiunisioParser.Llamada_metodoContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitLlamada_metodo(DiunisioParser.Llamada_metodoContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterConstructor(DiunisioParser.ConstructorContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitConstructor(DiunisioParser.ConstructorContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterBloque_constructor(DiunisioParser.Bloque_constructorContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitBloque_constructor(DiunisioParser.Bloque_constructorContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterSuperclase(DiunisioParser.SuperclaseContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitSuperclase(DiunisioParser.SuperclaseContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterAsignacion_esto(DiunisioParser.Asignacion_estoContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitAsignacion_esto(DiunisioParser.Asignacion_estoContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterAsignacion_obj(DiunisioParser.Asignacion_objContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitAsignacion_obj(DiunisioParser.Asignacion_objContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterObjeto(DiunisioParser.ObjetoContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitObjeto(DiunisioParser.ObjetoContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterMetodo(DiunisioParser.MetodoContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -70,6 +166,42 @@ public class DiunisioBaseListener implements DiunisioListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitMetodo(DiunisioParser.MetodoContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterModificador(DiunisioParser.ModificadorContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitModificador(DiunisioParser.ModificadorContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterAcceso(DiunisioParser.AccesoContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitAcceso(DiunisioParser.AccesoContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterDiunisio10(DiunisioParser.Diunisio10Context ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitDiunisio10(DiunisioParser.Diunisio10Context ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

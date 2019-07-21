@@ -11,7 +11,7 @@ public class Main {
         lexer = new DiunisioLexer(new ANTLRFileStream("src/Ejemplo1.txt"));
         //Realiza el parseo del código
         DiunisioParser parser = new DiunisioParser(new CommonTokenStream(lexer));
-        ParseTree tree = parser.clase_sentencia();
+        ParseTree tree = parser.algoritmo();
         EvalVisitor visitor = new EvalVisitor();
         visitor.visit(tree);
     }
