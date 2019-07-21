@@ -8,14 +8,10 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
         DiunisioLexer lexer;
-
-
-            lexer = new DiunisioLexer(new ANTLRFileStream("src/Ejemplo1.txt"));
-
-
+        lexer = new DiunisioLexer(new ANTLRFileStream("src/Ejemplo1.txt"));
         //Realiza el parseo del código
         DiunisioParser parser = new DiunisioParser(new CommonTokenStream(lexer));
-        ParseTree tree = parser.algoritmo();
+        ParseTree tree = parser.clase_sentencia();
         EvalVisitor visitor = new EvalVisitor();
         visitor.visit(tree);
     }

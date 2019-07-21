@@ -1,4 +1,4 @@
-// Generated from C:/Users/melli/Desktop/UNLang/src\Diunisio.g4 by ANTLR 4.7
+// Generated from C:/Users/Zylfrox/IdeaProjects/DIUNISIO2.0/src\Diunisio.g4 by ANTLR 4.7.2
 import org.antlr.v4.runtime.tree.ParseTreeVisitor;
 
 /**
@@ -10,11 +10,35 @@ import org.antlr.v4.runtime.tree.ParseTreeVisitor;
  */
 public interface DiunisioVisitor<T> extends ParseTreeVisitor<T> {
 	/**
-	 * Visit a parse tree produced by {@link DiunisioParser#algoritmo}.
+	 * Visit a parse tree produced by {@link DiunisioParser#clase_sentencia}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitAlgoritmo(DiunisioParser.AlgoritmoContext ctx);
+	T visitClase_sentencia(DiunisioParser.Clase_sentenciaContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link DiunisioParser#acceso}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitAcceso(DiunisioParser.AccesoContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link DiunisioParser#bloque_clase}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitBloque_clase(DiunisioParser.Bloque_claseContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link DiunisioParser#clase_body}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitClase_body(DiunisioParser.Clase_bodyContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link DiunisioParser#metodo}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitMetodo(DiunisioParser.MetodoContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link DiunisioParser#lista_ids}.
 	 * @param ctx the parse tree

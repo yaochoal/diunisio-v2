@@ -21,10 +21,9 @@ public class EvalVisitor extends DiunisioBaseVisitor<Valor> {
 
     //Visitor de las producciones de Algoritmo
     @Override
-    public Valor visitAlgoritmo(DiunisioParser.AlgoritmoContext ctx) {
+    public Valor visitMetodo(DiunisioParser.MetodoContext ctx) {
         Main.algoritmo = ctx.IDENTIFICADOR().getText();
         //Recibe los parámetros obtenidos de la clase Main y los inicializa
-
         if(ctx.lista_ids().getChildCount() > 0 && Main.parametros != null){
             int numParametro = 0;
             for(int i = 0; i < ctx.lista_ids().getChildCount(); i++){
@@ -106,9 +105,7 @@ public class EvalVisitor extends DiunisioBaseVisitor<Valor> {
         }
         //Si el valor es un número, lo retorna
         if (ctx.ENTERO() != null || ctx.REAL() != null) {
-            System.out.println("soy un numero");
             return new Valor(Double.valueOf(ctx.getText()));
-
         }
         //Si el valor es una cadena, la retorna removiendo las comillas
         else if (ctx.CADENA() != null) {

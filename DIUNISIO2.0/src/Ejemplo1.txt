@@ -1,11 +1,12 @@
-ALGORITMO pruebas(NULL):
-{
+publico clase Programa{
+   pruebas(a,b,c):
+   {
     a = 2;
-	b = 3;
-	c = 4;
+	b= 5;
+	c= 3;
 	imprimirPantalla(a);
 	imprimirPantalla(b);
 	imprimirPantalla(c);
 	retornar a+b;
+   }
 }
-.

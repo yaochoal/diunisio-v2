@@ -1,4 +1,4 @@
-// Generated from C:/Users/melli/Desktop/UNLang/src\Diunisio.g4 by ANTLR 4.7
+// Generated from C:/Users/Zylfrox/IdeaProjects/DIUNISIO2.0/src\Diunisio.g4 by ANTLR 4.7.2
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
 /**
@@ -7,15 +7,55 @@ import org.antlr.v4.runtime.tree.ParseTreeListener;
  */
 public interface DiunisioListener extends ParseTreeListener {
 	/**
-	 * Enter a parse tree produced by {@link DiunisioParser#algoritmo}.
+	 * Enter a parse tree produced by {@link DiunisioParser#clase_sentencia}.
 	 * @param ctx the parse tree
 	 */
-	void enterAlgoritmo(DiunisioParser.AlgoritmoContext ctx);
+	void enterClase_sentencia(DiunisioParser.Clase_sentenciaContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link DiunisioParser#algoritmo}.
+	 * Exit a parse tree produced by {@link DiunisioParser#clase_sentencia}.
 	 * @param ctx the parse tree
 	 */
-	void exitAlgoritmo(DiunisioParser.AlgoritmoContext ctx);
+	void exitClase_sentencia(DiunisioParser.Clase_sentenciaContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link DiunisioParser#acceso}.
+	 * @param ctx the parse tree
+	 */
+	void enterAcceso(DiunisioParser.AccesoContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link DiunisioParser#acceso}.
+	 * @param ctx the parse tree
+	 */
+	void exitAcceso(DiunisioParser.AccesoContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link DiunisioParser#bloque_clase}.
+	 * @param ctx the parse tree
+	 */
+	void enterBloque_clase(DiunisioParser.Bloque_claseContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link DiunisioParser#bloque_clase}.
+	 * @param ctx the parse tree
+	 */
+	void exitBloque_clase(DiunisioParser.Bloque_claseContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link DiunisioParser#clase_body}.
+	 * @param ctx the parse tree
+	 */
+	void enterClase_body(DiunisioParser.Clase_bodyContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link DiunisioParser#clase_body}.
+	 * @param ctx the parse tree
+	 */
+	void exitClase_body(DiunisioParser.Clase_bodyContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link DiunisioParser#metodo}.
+	 * @param ctx the parse tree
+	 */
+	void enterMetodo(DiunisioParser.MetodoContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link DiunisioParser#metodo}.
+	 * @param ctx the parse tree
+	 */
+	void exitMetodo(DiunisioParser.MetodoContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link DiunisioParser#lista_ids}.
 	 * @param ctx the parse tree
