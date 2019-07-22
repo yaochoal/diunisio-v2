@@ -43,29 +43,71 @@ Todas las palabras reservadas corresponden a una categoría: palabras reservadas
 usadas como nombres de variables, y palabras no reservadas, las cuales son reconocidas por el contexto
 y por eso pueden ser usadas como nombres de variables.
 Las palabras reservadas son las siguientes:
-publico | privado | protegido | estatico | final | abstracto | nuevo | esto | implementa | extiende | super | interfaz | clase | void
 
-## 3. Sentencias
-### 3.1. Clases
+publico | privado | protegido | estatico | final | abstracto | nuevo | esto | implementa | extiende | super | interfaz | clase | void 
 
-#### Ejemplo:
-### 3.2. Interfaces
-#### Ejemplo:
-### 3.3. Metodos
-#### Ejemplo:
-### 3.4. Objeto
-#### Ejemplo:
+## 3. ANTLR
+
+### 3.1. Tokens del lenguaje
+
+### 3.2. Gramática E-BNF
+
+### 3.3. Diagramas de sintaxis
+
+### 3.4. Árbol de parseo
+
 
 ## 4. Ejemplos
+### 4.1. Clases
+```sh
+publico clase Cajero implementa Persona {
+    Cadena nombre;
+    entero edad;
+    Cadena identificacion;
 
+    publico Cajero(Cadena nombre, entero edad, Cadena identificacion){
+        esto.nombre = nombre;
+        esto.edad = edad;
+        esto.identificacion = identificacion;
+    }
+    
+    publico Cadena decirNombre(){
+        retornar nombre;
+    }
+    
+    publico entero diferenciaDeEdad(Fecha nacimiento){
+        retornar x;
+    }
+    
+    publico void setNombre(Cadena nombre){
+        esto.nombre = nombre;
+    }
+    
+    publico void getNombre(Cadena nombre){
+        retornar esto.nombre;
+    } 
+}
+```
 
-## 5. ANTLR
+### 4.2. Interfaces
+```sh
+interfaz Personas {
+    publico Cadena decirNombre();
+    publico entero diferenciaDeEdad(Fecha nacimiento);
+}
+```
 
-### 5.1. Tokens del lenguaje
+### 4.3. Metodos
+```sh
+publico Cajero(Cadena nombre, entero edad, Cadena identificacion){
+    esto.nombre = nombre;
+    esto.edad = edad;
+    esto.identificacion = identificacion;
+}
+```
 
-### 5.2. Gramática E-BNF
-
-### 5.3. Diagramas de sintaxis
-
-### 5.4. Árbol de parseo
+### 4.4. Objeto
+```sh
+Cajero cajero = nuevo Cajero(Cadena nombre, entero edad, Cadena identificacion);
+```
 
