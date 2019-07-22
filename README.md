@@ -50,11 +50,7 @@ publico | privado | protegido | estatico | final | abstracto | nuevo | esto | im
 
 ### 3.1. Tokens del lenguaje
 
-### 3.2. Gramática E-BNF
-
-### 3.3. Diagramas de sintaxis
-
-### 3.4. Árbol de parseo
+### 3.2. Gramática E-BNF y Diagramas de sintaxis
 
 
 ## 4. Ejemplos
