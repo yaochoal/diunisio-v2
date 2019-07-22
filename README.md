@@ -79,7 +79,6 @@ publico | privado | protegido | estatico | final | abstracto | nuevo | esto | im
 ![Diagrama](/img/img8.png )
 ![Diagrama](/img/img9.png )
 ![Diagrama](/img/img10.png )
-![Diagrama](/img/img11.png )
 ![Diagrama](/img/img12.png )
 ![Diagrama](/img/img13.png )
 ![Diagrama](/img/img14.png )
