@@ -3,19 +3,47 @@ grammar Diunisio;
 
 //Símbolo inicial
 algoritmo
- : diunisio10 | diunisio20
- ;
-diunisio20
- : declaracionClase
+ : diunisio10 | diunisio20*
  ;
 
+// version diUNisio orientada a objetos
+diunisio20
+ : declaracionClase
+ | interfaz
+ ;
+
+// Interaz
+interfaz
+ : INTERFAZ CLASEID bloque_interfaz
+ ;
+
+// bloque de la interfaz
+bloque_interfaz
+ : LLAVEIZ interfaz_body* LLAVEDE
+ ;
+
+// cuerpo de la intrefaz
+interfaz_body//creacion metodos
+ : def_metodo
+ ;
+
+// definicion de un metodo
+def_metodo
+ : PUBLICO tipo IDENTIFICADOR lista_parsv_objeto PCOMA
+ ;
+
+// Clase
 declaracionClase
  : acceso (FINAL | ESTATICO)?  CLASE CLASEID (EXTIENDE CLASEID)? (IMPLEMENTA CLASEID)? bloque_clase
  ;
+
+// bloque clase3
 bloque_clase
  : LLAVEIZ clase_body* LLAVEDE
  | LLAVEIZ LLAVEDE
  ;
+
+// cuerpo clase
 clase_body
  : proposicion
  | def_clase
@@ -25,51 +53,69 @@ clase_body
  | constructor
  | llamada_metodo
  ;
+
+// definicion clase
 def_clase
  : tipo (IDENTIFICADOR)?  PCOMA
  ;
+
+// llamada a un metodo
 llamada_metodo
  : IDENTIFICADOR PUNTO IDENTIFICADOR lista_parsv PCOMA
  | SUPERCLASE PUNTO IDENTIFICADOR lista_parsv PCOMA
  ;
+
+// constructor
 constructor
   : acceso CLASEID lista_parsv LLAVEIZ bloque_constructor* LLAVEDE
   ;
-  bloque_constructor
-  :
-    asignacion_esto
+
+// bloque constructor
+bloque_constructor
+  :  asignacion_esto
   |  superclase
   ;
+
+// superclase
 superclase
   : SUPERCLASE lista_parsv PCOMA
   ;
+
+// asignacion de a variables internas de la calse (this.)
 asignacion_esto //asignar this en constructor
   : (ESTO PUNTO IDENTIFICADOR ASIGNAR expresion PCOMA)
   ;
 
+// asignacion de un objeto
 asignacion_obj
   : IDENTIFICADOR PUNTO variable ASIGNAR expresion PCOMA
   ;
 
+// objeto
 objeto
   : CLASEID IDENTIFICADOR ASIGNAR NUEVO CLASEID lista_parsv PCOMA //creacion objeto
   ;
-metodo //creacion metodos
+
+// creacion de metodos
+metodo
  : acceso? modificador? tipo IDENTIFICADOR lista_parsv bloque_metodo
  ;
- //modificadores metodos
+
+//modificadores metodos
 modificador
  : ESTATICO | FINAL | ABSTRACTO
  ;
 
-acceso //CONTROL DE ACCESO METODOS
+// control de acceso a metodos
+acceso
  : PUBLICO | PRIVADO | PROTEGIDO
  ;
 
-
+// version diUNisio procedimental
 diunisio10
  : ALGORITMO IDENTIFICADOR (PAREN_AP lista_ids PAREN_CI)? DOSPUNTOS bloque TERMINA
  ;
+
 //Lista de identificadores
 lista_ids
  : IDENTIFICADOR (COMA IDENTIFICADOR)*
@@ -125,8 +171,14 @@ factor
  ;
 
 //Lista de parámetros
-lista_parsv
- : PAREN_AP (expresion | variable | IDENTIFICADOR) (COMA (expresion | variable | IDENTIFICADOR ))* PAREN_CI
+  lista_parsv
+   : PAREN_AP (expresion | variable | IDENTIFICADOR) (COMA (expresion | variable | IDENTIFICADOR ))* PAREN_CI
+   | PAREN_AP PAREN_CI
+   ;
+
+//Lista de parámetros
+lista_parsv_objeto
+ : PAREN_AP (tipo IDENTIFICADOR) (COMA (tipo IDENTIFICADOR))* PAREN_CI
  | PAREN_AP PAREN_CI
  ;
 
@@ -145,15 +197,18 @@ bloque
  | LLAVEIZ sec_proposiciones LLAVEDE
  ;
 
+// bloque metodo
 bloque_metodo
  : LLAVEIZ LLAVEDE
  | LLAVEIZ sec_pobjeto LLAVEDE
  ;
 
+// secuencias de proposiciones que pueden ejecutar los objetos
 sec_pobjeto
  : (proposicion_obj)* proposicion_obj
  ;
 
+// propociones para objetos
  proposicion_obj
   : RETORNAR expresion PCOMA
   | objeto
@@ -263,6 +318,7 @@ SUPERCLASE : 'super'; //nuewo token
 INTERFAZ: 'interfaz'; //nuevo token
 CLASE: 'clase'; //nuevo token
 VOID: 'void'; //nuevo token
+
 //Expresiones regulares para tokens
 COMENTARIO : ('#' ~[\r\n]*  | '/*' .*? '*/') -> skip;
 ALGORITMO : 'ALGORITMO';
@@ -313,7 +369,6 @@ ROMPER: 'romper';
 HACER: 'hacer';
 PARA : 'para';
 DEFECTO : 'defecto';
-
 CLASEID : [A-Z] [a-zA-Z_0-9]*;//nuewo token
 IDENTIFICADOR : [a-zA-Z_] [a-zA-Z_0-9]*;
 ENTERO : [0-9]+;
@@ -322,4 +377,3 @@ COMPLEJO : (ENTERO|REAL) [+|-] (ENTERO|REAL)? 'i';
 CADENA : '"' (~["\r\n] | '""')* '"';
 ESPACIO : [ \t\r\n] -> skip;
 OTRO : .;
-
