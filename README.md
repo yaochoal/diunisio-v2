@@ -48,7 +48,25 @@ publico | privado | protegido | estatico | final | abstracto | nuevo | esto | im
 
 ## 3. ANTLR
 
-### 3.1. Tokens del lenguaje
+### 3.1. Nuevos Tokens del lenguaje
+|       Categoría léxica     |                 Expresión regular                  |
+|-----------------------|-----------------------------------------------|
+|  PUBLICO     |    'publico'   |
+|  PRIVADO      |    'privado'     |
+|  PROTEGIDO      |    'protegido'     |
+|  ESTATICO      |    'estatico'     |
+|  FINAL      |    'final'     |
+|  ABSTRACTO      |    'abstracto'     |
+|  NUEVO      |    'nuevo'     |
+|  PUNTO      |    '.'     |
+|  ESTO      |    'esto'     |
+|  IMPLEMENTA      |    'implementa'     |
+|  EXTIENDE      |    'extiende'     |
+|  SUPERCLASE     |    'super'     |
+|  INTERFAZ   |    'interfaz'     |
+|  CLASE |    'clase'     |
+|  VOID|    'void'     |
+|  CLASEID |    [A-Z] [a-zA-Z_0-9]*     |
 
 ### 3.2. Gramática E-BNF y Diagramas de sintaxis
 
