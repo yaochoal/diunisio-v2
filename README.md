@@ -69,8 +69,29 @@ publico | privado | protegido | estatico | final | abstracto | nuevo | esto | im
 |  CLASEID |    [A-Z] [a-zA-Z_0-9]*     |
 
 ### 3.2. Gramática E-BNF y Diagramas de sintaxis
-
-
+![Diagrama](/img/img1.png )
+![Diagrama](/img/img2.png )
+![Diagrama](/img/img3.png )
+![Diagrama](/img/img4.png )
+![Diagrama](/img/img5.png )
+![Diagrama](/img/img6.png )
+![Diagrama](/img/img7.png )
+![Diagrama](/img/img8.png )
+![Diagrama](/img/img9.png )
+![Diagrama](/img/img10.png )
+![Diagrama](/img/img11.png )
+![Diagrama](/img/img12.png )
+![Diagrama](/img/img13.png )
+![Diagrama](/img/img14.png )
+![Diagrama](/img/img15.png )
+![Diagrama](/img/img16.png )
+![Diagrama](/img/img17.png )
+![Diagrama](/img/img18.png )
+![Diagrama](/img/img19.png )
+![Diagrama](/img/img20.png )
+![Diagrama](/img/img21.png )
+![Diagrama](/img/img22.png )
+![Diagrama](/img/img23.png )
 ## 4. Ejemplos
 ### 4.1. Clases
 ```sh
