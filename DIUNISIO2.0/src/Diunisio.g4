@@ -67,7 +67,7 @@ llamada_metodo
 
 // constructor
 constructor
-  : acceso CLASEID lista_parsv LLAVEIZ bloque_constructor* LLAVEDE
+  : acceso CLASEID lista_parsv_objeto LLAVEIZ bloque_constructor* LLAVEDE
   ;
 
 // bloque constructor
@@ -93,12 +93,12 @@ asignacion_obj
 
 // objeto
 objeto
-  : CLASEID IDENTIFICADOR ASIGNAR NUEVO CLASEID lista_parsv PCOMA //creacion objeto
+  : CLASEID IDENTIFICADOR ASIGNAR NUEVO CLASEID lista_parsv_objeto PCOMA //creacion objeto
   ;
 
 // creacion de metodos
 metodo
- : acceso? modificador? tipo IDENTIFICADOR lista_parsv bloque_metodo
+ : acceso? modificador? tipo IDENTIFICADOR lista_parsv_objeto bloque_metodo
  ;
 
 //modificadores metodos
@@ -211,7 +211,9 @@ sec_pobjeto
 // propociones para objetos
  proposicion_obj
   : RETORNAR expresion PCOMA
+  | RETORNAR ESTO PUNTO IDENTIFICADOR PCOMA
   | objeto
+  | asignacion_esto
   | si_senten
   | asignacion_obj
   | llamada_metodo
