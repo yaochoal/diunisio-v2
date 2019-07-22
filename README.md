@@ -26,9 +26,18 @@ que permite construir clases, interfases y algoritmos con sintaxis flexible, fá
 
 ## 2. Descripción del nuevo modelo de programación
 ### 2.1. Clases
+Una clase es una estructura para la creacion de objetos que puede tener en su interior atributos y métodos. Cada clase debe tener un tipo de acceso definido (público, privado o protegido), tambien debe tener un numbre que empiece con una letra mayuscula y puede extener o implementar otras clases.
+
 ### 2.2. Interfaces
+Una interfaz es una lista de acciones que puede llevar a cabo un determinado objeto. Cada intrefaz empieza con la palabra "interfaz" seguido de un nombre con la primera letra mayuscula y una lista de métods que implementrán los objetos.
+
 ### 2.3. Metodos
+Un método es un conjunto de instrucciones definidas dentro de una clase, que realizan una determinada tarea y a las que podemos invocar mediante un nombre.
+
 ### 2.4. Objeto
+Un objeto el la instancia de una clase en particular.
+
+### 2.5. Palabras reservadas
 
 ## 3. Expresiones
 
